@@ -235,17 +235,17 @@ private AppCompatButton option1,option2 ,option3 ,option4;
 
 
     private int getIncorrectAnswers(){
-        int correctAnswers=0;
+        int incorrectAnswers=0;
         for (int i=0;i<questionsLists.size();i++){
             final String getUserSelectedAnswer =questionsLists.get(i).getUserSelectedAnswer();
             final String getAnswer =questionsLists.get(i).getAnswer();
 
             if (!getUserSelectedAnswer.equals(getAnswer)){
-                correctAnswers++;
+                incorrectAnswers++;
 
             }
         }
-        return correctAnswers;
+        return incorrectAnswers;
     }
 
 
