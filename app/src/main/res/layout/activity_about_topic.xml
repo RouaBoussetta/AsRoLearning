@@ -13,6 +13,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="290dp"
         android:orientation="horizontal">
 
 
@@ -20,10 +24,7 @@
             android:id="@+id/logoTopic"
             android:layout_width="wrap_content"
             android:layout_height="192dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginEnd="100dp"
-            android:layout_marginBottom="290dp"
+
             android:src="@drawable/logo"
 
             />
@@ -36,17 +37,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="100dp"
+        >
 
 
         <TextView
             android:id="@+id/topic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="150dp"
-            android:layout_marginEnd="100dp"
-            android:layout_marginBottom="65dp"
+
             android:fontFamily="@font/anaktoria"
             android:text="Selected Topic"
             android:textAlignment="center"
@@ -64,8 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginEnd="60dp"
-
-        android:layout_marginTop="290dp"
+        android:layout_marginTop="400dp"
         android:background="@drawable/round_background"
         android:gravity="center"
         android:orientation="horizontal">
