@@ -58,17 +58,17 @@ private AppCompatButton option1,option2 ,option3 ,option4;
        startTimer(timer);
       questions.setText((currentQuestionPosition+1)+"/"+questionsLists.size());
         question.setText(questionsLists.get(0).getQuestion());
-        option1.setText(questionsLists.get(0).getQuestion());
-        option2.setText(questionsLists.get(0).getQuestion());
-        option3.setText(questionsLists.get(0).getQuestion());
-        option4.setText(questionsLists.get(0).getQuestion());
+        option1.setText(questionsLists.get(0).getOption1());
+        option2.setText(questionsLists.get(0).getOption2());
+        option3.setText(questionsLists.get(0).getOption3());
+        option4.setText(questionsLists.get(0).getOption4());
         option1.setOnClickListener(view -> {
 
           if (selectedOptionByUser.isEmpty()){
                 selectedOptionByUser=option1.getText().toString();
                 option1.setBackgroundResource(R.drawable.round_back_red);
                 option1.setTextColor(Color.WHITE);
-               // revealAnswer();
+                revealAnswer();
                 questionsLists.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
 
             }
@@ -80,7 +80,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
                 selectedOptionByUser=option2.getText().toString();
                 option2.setBackgroundResource(R.drawable.round_back_red);
                 option2.setTextColor(Color.WHITE);
-                //revealAnswer();
+                revealAnswer();
                 questionsLists.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
 
             }
@@ -91,7 +91,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
                 selectedOptionByUser=option3.getText().toString();
                 option3.setBackgroundResource(R.drawable.round_back_red);
                 option3.setTextColor(Color.WHITE);
-               // revealAnswer();
+                revealAnswer();
                 questionsLists.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
 
             }
@@ -102,7 +102,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
                 selectedOptionByUser=option4.getText().toString();
                 option4.setBackgroundResource(R.drawable.round_back_red);
                 option4.setTextColor(Color.WHITE);
-               // revealAnswer();
+                revealAnswer();
                 questionsLists.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
 
             }
