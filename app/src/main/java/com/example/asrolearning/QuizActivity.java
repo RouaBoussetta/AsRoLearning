@@ -149,10 +149,10 @@ private AppCompatButton option1,option2 ,option3 ,option4;
 
             questions.setText((currentQuestionPosition+1)+"/"+questionsLists.size());
             question.setText(questionsLists.get(currentQuestionPosition).getQuestion());
-            option1.setText(questionsLists.get(currentQuestionPosition).getQuestion());
-            option2.setText(questionsLists.get(currentQuestionPosition).getQuestion());
-            option3.setText(questionsLists.get(currentQuestionPosition).getQuestion());
-            option4.setText(questionsLists.get(currentQuestionPosition).getQuestion());
+            option1.setText(questionsLists.get(currentQuestionPosition).getOption1());
+            option2.setText(questionsLists.get(currentQuestionPosition).getOption2());
+            option3.setText(questionsLists.get(currentQuestionPosition).getOption3());
+            option4.setText(questionsLists.get(currentQuestionPosition).getOption4());
         }else
         {
             Intent intent=new Intent(QuizActivity.this,QuizResultsActivity.class);
