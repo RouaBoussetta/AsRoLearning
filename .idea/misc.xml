@@ -16,7 +16,11 @@
         <entry key="..\:/Users/LENOVO/Documents/GitHub/AsRoLearning/app/src/main/res/layout/activity_quiz.xml" value="0.1" />
         <entry key="..\:/Users/LENOVO/Documents/GitHub/AsRoLearning/app/src/main/res/layout/activity_quiz_results.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+<<<<<<< Updated upstream
         <entry key="app/src/main/res/layout/activity_quiz.xml" value="0.221875" />
+=======
+        <entry key="app/src/main/res/layout/activity_quiz.xml" value="0.25" />
+>>>>>>> Stashed changes
         <entry key="app/src/main/res/layout/activity_quiz_results.xml" value="0.1322463768115942" />
       </map>
     </option>
