@@ -70,16 +70,16 @@ public class QuestionsBank {
 
         final List <QuestionsList> questionsLists=new ArrayList<>();
 
-        final QuestionsList question1=new QuestionsList("a"," Plugins","Build","Properties","Parent","Parent","");
-        final QuestionsList question1=new QuestionsList("a"," Plugins","Build","Properties","Parent","Parent","");
-        final QuestionsList question1=new QuestionsList("a"," Plugins","Build","Properties","Parent","Parent","");
-        final QuestionsList question1=new QuestionsList("a"," Plugins","Build","Properties","Parent","Parent","");
-        final QuestionsList question1=new QuestionsList("a"," Plugins","Build","Properties","Parent","Parent","");
-        final QuestionsList question1=new QuestionsList("a"," Plugins","Build","Properties","Parent","Parent","");
-        final QuestionsList question1=new QuestionsList("a"," Plugins","Build","Properties","Parent","Parent","");
-        final QuestionsList question1=new QuestionsList("a"," Plugins","Build","Properties","Parent","Parent","");
-        final QuestionsList question1=new QuestionsList("a"," Plugins","Build","Properties","Parent","Parent","");
-        final QuestionsList question1=new QuestionsList("a"," Plugins","Build","Properties","Parent","Parent","");
+        final QuestionsList question1=new QuestionsList("When a javaScript function is invoked (called) in Node, where is a new frame placed?"," the call stack","the event loop","the poll phase"," the events queue","the call stack","");
+        final QuestionsList question2=new QuestionsList("Which of the following is a core module in Node?"," webpack","crypto","request","chalk","crypto","");
+        final QuestionsList question3=new QuestionsList("Which of the following Buffer class methods returns an uninitialized buffer?","  allocUnsafe","concat","from","alloc"," allocUnsafe","");
+        final QuestionsList question4=new QuestionsList("Which of the following modules is NOT a built-in module in Node?"," ftp","events"," dgram","http2","ftp","");
+        final QuestionsList question5=new QuestionsList("Which fs module method can be used to read the content of a file without buffering it in memory?"," read","readFile","createReadStream","readFileSync","createReadStream","");
+        final QuestionsList question6=new QuestionsList("Which of the following DNS module methods uses the underlying OS facilities and does not necessarily perform any network communication?","  lookup","resolve","resolve4","reverse"," lookup","");
+        final QuestionsList question7=new QuestionsList("How do you check that a value is a date object in Node?","  util.types.isDate(value)","assert.isDate(value)","console.isDate(value)","util.date(value)"," util.types.isDate(value)","");
+        final QuestionsList question8=new QuestionsList("Can you create an https web server with Node.js?"," no, there are no modules supporting it yet","yes, with the https or http2 modules","yes, through the path module","yes, with the http module","yes, with the https or http2 modules","");
+        final QuestionsList question9=new QuestionsList("Which of the following is a method on the console object?"," exit","test","time","print","time","");
+        final QuestionsList question10=new QuestionsList("Which object is used to manage the cache of required modules?"," global.cache","module.cache","process.cache","require.cache","require.cache","");
 
         questionsLists.add(question1);
         questionsLists.add(question2);
@@ -100,15 +100,28 @@ public class QuestionsBank {
 
         final List <QuestionsList> questionsLists=new ArrayList<>();
 
-        final QuestionsList question1=new QuestionsList("What element in the pom.xml file allows you to provide values that can be reused in other elements of the pom.xml?"," Plugins","Build","Properties","Parent","Parent","");
-        final QuestionsList question2=new QuestionsList(" If you wish to build and package your artifact using the Maven package goal but don't want to execute the unit tests, which environment variable and value would you use?","maven.test.ignore=TRUE","maven.test.run=FALSE","maven.test.skip=TRUE"," maven.verify.execute=FALSE","maven.test.skip=TRUE","");
-        final QuestionsList question3=new QuestionsList("What directory structure contains the source code of your artifact?"," src/code"," src/test/java"," src/main/java"," src/main/resources"," src/main/java","");
-        final QuestionsList question4=new QuestionsList("Which command is used to run the clean lifecyle followed by verify, install, and package with Maven?","mvn package","mvn clean install package","mvn clean install","mvn clear install","mvn package","");
+        final QuestionsList question1=new QuestionsList("Which command adds members to the replica set from MongoDB shell?"," rs.add(\"<hostname>\")","replicaSetAdd(\"<hostname>\")","rs.insert(\"<hostname>\")","replica.add(\"<hostname>\")","rs.add(\"<hostname>\")","");
+        final QuestionsList question2=new QuestionsList(" Which MongoDB shell command should you use to back up a database?"," restore","backup","mongobackup","mongodump","mongodump","");
+        final QuestionsList question3=new QuestionsList("What does a MongoDB collection consist of?"," data","documents","fields","rows","documents","");
+        final QuestionsList question4=new QuestionsList("Given a cursor named myCursor, which command returns a boolean value?","  myCursor.hasNext()","myCursor.sort()"," myCursor.next()","myCursor.find()"," myCursor.hasNext()","");
+        final QuestionsList question5=new QuestionsList("Which command returns a specific document in the user's collection?"," db.users.find({_id: 1})","db.users.seek({_id: 1})"," db.users.query({_id: 1})","db.query.users({_id: 1})","db.users.find({_id: 1})","");
+        final QuestionsList question6=new QuestionsList("To import a JSON array into Mongo, what flags are needed with MongoDBimport?"," --type jsonArray"," --json","--type json","--jsonArray","--jsonArray","");
+        final QuestionsList question7=new QuestionsList("Choose the shell command that connects to a MongoDB database."," mongo","mongod","mongoconnect","dbconnect","mongo","");
+        final QuestionsList question8=new QuestionsList("In the MongoDB shell, how can you tell if an index was used with a query?","  db.customers.find({lastName: 'smith'}).explain()"," db.customers.find({lastName: 'smith'}).perf()","db.customers.find({lastName: 'smith'}).plan()"," db.customers.find({lastName: 'smith'}).usedIndex()"," db.customers.find({lastName: 'smith'}).explain()","");
+        final QuestionsList question9=new QuestionsList("What is the recommended way to delete a user?"," db.deleteUser(\"user\")","db.removeUser(\"user\") DEPRECATED","db.remove(\"user\")","db.dropUser(\"user\")","db.dropUser(\"user\")","");
+        final QuestionsList question10=new QuestionsList("What is the purpose of an arbiter in a replica set?"," It monitors replica set and sends email in case of failure"," It casts the tie-breaking vote in an election.","It holds a backup copy of the database.","It reboots the failed server."," It casts the tie-breaking vote in an election.","");
+
 
         questionsLists.add(question1);
         questionsLists.add(question2);
         questionsLists.add(question3);
         questionsLists.add(question4);
+        questionsLists.add(question5);
+        questionsLists.add(question6);
+        questionsLists.add(question7);
+        questionsLists.add(question8);
+        questionsLists.add(question9);
+        questionsLists.add(question10);
 
 
         return questionsLists;
@@ -118,29 +131,31 @@ public class QuestionsBank {
 
         final List <QuestionsList> questionsLists=new ArrayList<>();
 
-        final QuestionsList question1=new QuestionsList("What element in the pom.xml file allows you to provide values that can be reused in other elements of the pom.xml?"," Plugins","Build","Properties","Parent","Parent","");
-        final QuestionsList question2=new QuestionsList(" If you wish to build and package your artifact using the Maven package goal but don't want to execute the unit tests, which environment variable and value would you use?","maven.test.ignore=TRUE","maven.test.run=FALSE","maven.test.skip=TRUE"," maven.verify.execute=FALSE","maven.test.skip=TRUE","");
-        final QuestionsList question3=new QuestionsList("What directory structure contains the source code of your artifact?"," src/code"," src/test/java"," src/main/java"," src/main/resources"," src/main/java","");
-        final QuestionsList question4=new QuestionsList("Which command is used to run the clean lifecyle followed by verify, install, and package with Maven?","mvn package","mvn clean install package","mvn clean install","mvn clear install","mvn package","");
+        final QuestionsList question1=new QuestionsList("Which XML attribute should be used to make an Image View accessible?"," android:talkBack","android:labelFor","android:hint","android:contentDescription","android:contentDescription","");
+        final QuestionsList question2=new QuestionsList("You want to include about and setting modules in your project. Which files accurately reflects their inclusion?","  in build.gradle:include ':app',':about' ':settings'","in settings.gradle:include ':app',':about' ':settings'","in settings.gradle:include ':about',':settings'","in gradle.properties:include ':app',':about' ':settings'","in settings.gradle:include ':app',':about' ':settings'","");
+        final QuestionsList question3=new QuestionsList("What is the benifit of using @VisibleForTesting annotation?"," to denote that a class, methos, or field has its visibility relaxed to make code testable","to denote that a class, method, or field is visible only in the test code","to denote that a class, method, or field has its visibility increased to make code less testable"," to throw a run-time error if a class, methos, or field with this annotation is accessed improperly","to denote that a class, methos, or field has its visibility relaxed to make code testable","");
+        final QuestionsList question4=new QuestionsList("When will an activity's onActivityResult()be called?"," when calling finish()in the parent activity","when placing an app into the background by sitching to another app","When onStop() is called in the target activity","when calling finish() in the target activity","when calling finish() in the target activity","");
+        final QuestionsList question5=new QuestionsList(" When would you use a product flavour in your build setup?"," when you need to have the app's strings present in multiple lanuages","when you have to provide different versions of your app based on the physical device size","when you want to provide different versions of your app based on the device screen density","when you want to provide different version of your app with custom configuration and resources","when you want to provide different version of your app with custom configuration and resources","");
+        final QuestionsList question6=new QuestionsList("What allows you to properly restore a user's state when an activity is restarted?"," the onSaveInstance()method"," all of these answers","persistent storage","ViewModel objects","the onSaveInstance()method","");
+        final QuestionsList question7=new QuestionsList("IF the main thread is blocked for too long, the system displays the _ dialog?"," Thread Not Responding","Application Paused"," Application Not Responding","Application Blocked"," Application Not Responding","");
+        final QuestionsList question8=new QuestionsList("You need to get a list of devices that are attached to your computer with USB debugging enable. Which command would execute using the Android Debug Bridge?"," list devices"," adb devices"," list avd"," dir devices"," adb devices","");
+        final QuestionsList question9=new QuestionsList("To persist a small collection of key-value data, what should you use?"," external file storage","SharedPereferences","SQLite","internal file storage","SharedPereferences","");
+        final QuestionsList question10=new QuestionsList("Given the test class below, which code snippet would be a correct assertion?"," assertThat(resultAdd).is(2.0)","assertNotNull(resultAdd)","assertThat(resultAdd).isWqualTo(2.0)"," assertThat(resultAdd)","assertNotNull(resultAdd)","");
 
         questionsLists.add(question1);
         questionsLists.add(question2);
         questionsLists.add(question3);
         questionsLists.add(question4);
+        questionsLists.add(question5);
+        questionsLists.add(question6);
+        questionsLists.add(question7);
+        questionsLists.add(question8);
+        questionsLists.add(question9);
+        questionsLists.add(question10);
 
 
         return questionsLists;
     }
-
-
-
-
-
-
-
-
-
-
 
 
     public static List<QuestionsList> getQuestions(String selectedTopicName){
