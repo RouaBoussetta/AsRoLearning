@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
    android:orientation="vertical"
-    android:background="@color/white"
+    android:background="@drawable/background"
     tools:context=".QuizActivity">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@drawable/background1">
+        >
 
 
         <ImageView
