@@ -55,7 +55,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
 
        questionsLists=QuestionsBank.getQuestions(getSelectedTopicName);
 
-       startTimer(timer);
+      // startTimer(timer);
       questions.setText((currentQuestionPosition+1)+"/"+questionsLists.size());
         question.setText(questionsLists.get(0).getQuestion());
         option1.setText(questionsLists.get(0).getOption1());
@@ -167,7 +167,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
 
     }
 
-
+/*
     private  void startTimer(TextView timerTextView){
         quizTimer=new Timer();
         quizTimer.scheduleAtFixedRate(new TimerTask() {
@@ -217,7 +217,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
         },1000,1000);
 
     }
-
+*/
 
     private int getCorrectAnswers(){
         int correctAnswers=0;
