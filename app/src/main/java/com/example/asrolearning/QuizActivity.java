@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,10 +29,11 @@ private AppCompatButton option1,option2 ,option3 ,option4;
     private int totalTimeInMin=1;
     private int seconds=0;
 
-    private List<QuestionsList> questionsLists;
+    private List<Questions> questionsList;
     private  int  currentQuestionPosition =0;
 
     private  String selectedOptionByUser="";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +45,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
 
         final TextView timer=findViewById(R.id.timer);
         SelectedTopicName.setText(getSelectedTopicName);
-
+        Log.d("getSelectedTopicName", "This is my message "+getSelectedTopicName);
 
         questions=findViewById(R.id.questions);
         question=findViewById(R.id.question);
@@ -53,15 +55,22 @@ private AppCompatButton option1,option2 ,option3 ,option4;
         option4=findViewById(R.id.option4);
         nextBtn=findViewById(R.id.nextBtn);
 
-       questionsLists=QuestionsBank.getQuestions(getSelectedTopicName);
+        AsRoLearningDBHelper  dbHelper=new AsRoLearningDBHelper(this);
+        questionsList=dbHelper.getAllQuestions(getSelectedTopicName);
+
+/*
+        //   questionsList=QuestionsBank.getQuestions(getSelectedTopicName);
 
        startTimer(timer);
-      questions.setText((currentQuestionPosition+1)+"/"+questionsLists.size());
-        question.setText(questionsLists.get(0).getQuestion());
-        option1.setText(questionsLists.get(0).getOption1());
-        option2.setText(questionsLists.get(0).getOption2());
-        option3.setText(questionsLists.get(0).getOption3());
-        option4.setText(questionsLists.get(0).getOption4());
+      questions.setText((currentQuestionPosition+1)+"/"+questionsList.size());
+
+        question.setText(questionsList.get(0).getQuestion());
+
+
+        option1.setText(questionsList.get(0).getOption1());
+        option2.setText(questionsList.get(0).getOption2());
+        option3.setText(questionsList.get(0).getOption3());
+        option4.setText(questionsList.get(0).getOption4());
         option1.setOnClickListener(view -> {
 
           if (selectedOptionByUser.isEmpty()){
@@ -69,7 +78,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
                 option1.setBackgroundResource(R.drawable.round_back_red);
                 option1.setTextColor(Color.WHITE);
                 revealAnswer();
-                questionsLists.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
+                questionsList.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
 
             }
         });
@@ -81,7 +90,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
                 option2.setBackgroundResource(R.drawable.round_back_red);
                 option2.setTextColor(Color.WHITE);
                 revealAnswer();
-                questionsLists.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
+                questionsList.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
 
             }
         });
@@ -92,7 +101,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
                 option3.setBackgroundResource(R.drawable.round_back_red);
                 option3.setTextColor(Color.WHITE);
                 revealAnswer();
-                questionsLists.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
+                questionsList.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
 
             }
         });
@@ -103,7 +112,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
                 option4.setBackgroundResource(R.drawable.round_back_red);
                 option4.setTextColor(Color.WHITE);
                 revealAnswer();
-                questionsLists.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
+                questionsList.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
 
             }
         });
@@ -124,15 +133,18 @@ private AppCompatButton option1,option2 ,option3 ,option4;
             startActivity(new Intent(QuizActivity.this,MainActivity.class));
             finish();
         });
+        */
+
     }
+
 
 
     private void changeNextQuestion(){
         currentQuestionPosition++;
-        if((currentQuestionPosition+1)==questionsLists.size()){
+        if((currentQuestionPosition+1)==questionsList.size()){
             nextBtn.setText("Submit Quiz");
         }
-        if (currentQuestionPosition<questionsLists.size()){
+        if (currentQuestionPosition<questionsList.size()){
             selectedOptionByUser="";
             option1.setBackgroundResource(R.drawable.round_back_white_stroke2);
             option1.setTextColor(Color.parseColor("#1F6888"));
@@ -147,12 +159,12 @@ private AppCompatButton option1,option2 ,option3 ,option4;
             option4.setBackgroundResource(R.drawable.round_back_white_stroke2);
             option4.setTextColor(Color.parseColor("#1F6888"));
 
-            questions.setText((currentQuestionPosition+1)+"/"+questionsLists.size());
-            question.setText(questionsLists.get(currentQuestionPosition).getQuestion());
-            option1.setText(questionsLists.get(currentQuestionPosition).getQuestion());
-            option2.setText(questionsLists.get(currentQuestionPosition).getQuestion());
-            option3.setText(questionsLists.get(currentQuestionPosition).getQuestion());
-            option4.setText(questionsLists.get(currentQuestionPosition).getQuestion());
+            questions.setText((currentQuestionPosition+1)+"/"+questionsList.size());
+            question.setText(questionsList.get(currentQuestionPosition).getQuestion());
+            option1.setText(questionsList.get(currentQuestionPosition).getQuestion());
+            option2.setText(questionsList.get(currentQuestionPosition).getQuestion());
+            option3.setText(questionsList.get(currentQuestionPosition).getQuestion());
+            option4.setText(questionsList.get(currentQuestionPosition).getQuestion());
         }else
         {
             Intent intent=new Intent(QuizActivity.this,QuizResultsActivity.class);
@@ -221,9 +233,9 @@ private AppCompatButton option1,option2 ,option3 ,option4;
 
     private int getCorrectAnswers(){
         int correctAnswers=0;
-        for (int i=0;i<questionsLists.size();i++){
-            final String getUserSelectedAnswer =questionsLists.get(i).getUserSelectedAnswer();
-            final String getAnswer =questionsLists.get(i).getAnswer();
+        for (int i=0;i<questionsList.size();i++){
+            final String getUserSelectedAnswer =questionsList.get(i).getUserSelectedAnswer();
+            final String getAnswer =questionsList.get(i).getAnswer();
 
             if (getUserSelectedAnswer.equals(getAnswer)){
                 correctAnswers++;
@@ -236,9 +248,9 @@ private AppCompatButton option1,option2 ,option3 ,option4;
 
     private int getIncorrectAnswers(){
         int correctAnswers=0;
-        for (int i=0;i<questionsLists.size();i++){
-            final String getUserSelectedAnswer =questionsLists.get(i).getUserSelectedAnswer();
-            final String getAnswer =questionsLists.get(i).getAnswer();
+        for (int i=0;i<questionsList.size();i++){
+            final String getUserSelectedAnswer =questionsList.get(i).getUserSelectedAnswer();
+            final String getAnswer =questionsList.get(i).getAnswer();
 
             if (!getUserSelectedAnswer.equals(getAnswer)){
                 correctAnswers++;
@@ -262,7 +274,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
 
 
     private void revealAnswer(){
-        final  String getAnswer= questionsLists.get(currentQuestionPosition).getAnswer();
+        final  String getAnswer= questionsList.get(currentQuestionPosition).getAnswer();
         if(option1.getText().toString().equals(getAnswer)){
             option1.setBackgroundResource(R.drawable.round_back_green);
             option1.setTextColor(Color.WHITE);
