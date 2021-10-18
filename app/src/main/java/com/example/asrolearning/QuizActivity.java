@@ -58,20 +58,12 @@ private AppCompatButton option1,option2 ,option3 ,option4;
         nextBtn=findViewById(R.id.nextBtn);
 
         DbHelper = new AsRoLearningDBHelper(this);
-
         questionsList = DbHelper.getAllQuestions(getSelectedTopicName);
-
-        AsRoLearningDBHelper  dbHelper=new AsRoLearningDBHelper(this);
-        questionsList=dbHelper.getAllQuestions(getSelectedTopicName);
-
-   //questionsList=QuestionsBank.getQuestions(getSelectedTopicName);
 
        startTimer(timer);
       questions.setText((currentQuestionPosition+1)+"/"+questionsList.size());
 
         question.setText(questionsList.get(0).getQuestion());
-
-
         option1.setText(questionsList.get(0).getOption1());
         option2.setText(questionsList.get(0).getOption2());
         option3.setText(questionsList.get(0).getOption3());
@@ -166,10 +158,10 @@ private AppCompatButton option1,option2 ,option3 ,option4;
 
             questions.setText((currentQuestionPosition+1)+"/"+questionsList.size());
             question.setText(questionsList.get(currentQuestionPosition).getQuestion());
-            option1.setText(questionsList.get(currentQuestionPosition).getQuestion());
-            option2.setText(questionsList.get(currentQuestionPosition).getQuestion());
-            option3.setText(questionsList.get(currentQuestionPosition).getQuestion());
-            option4.setText(questionsList.get(currentQuestionPosition).getQuestion());
+            option1.setText(questionsList.get(currentQuestionPosition).getOption1());
+            option2.setText(questionsList.get(currentQuestionPosition).getOption2());
+            option3.setText(questionsList.get(currentQuestionPosition).getOption3());
+            option4.setText(questionsList.get(currentQuestionPosition).getOption4());
         }else
         {
             Intent intent=new Intent(QuizActivity.this,QuizResultsActivity.class);
@@ -239,8 +231,12 @@ private AppCompatButton option1,option2 ,option3 ,option4;
     private int getCorrectAnswers(){
         int correctAnswers=0;
         for (int i=0;i<questionsList.size();i++){
-            final String getUserSelectedAnswer =questionsList.get(i).getUserSelectedAnswer();
-            final String getAnswer =questionsList.get(i).getAnswer();
+
+             String getUserSelectedAnswer =questionsList.get(i).getUserSelectedAnswer();
+             String getAnswer =questionsList.get(i).getAnswer();
+
+            Log.d("TAG","selected ++++" +getUserSelectedAnswer);
+            Log.d("TAG","answer ++++" +getAnswer);
 
             if (getUserSelectedAnswer.equals(getAnswer)){
                 correctAnswers++;
