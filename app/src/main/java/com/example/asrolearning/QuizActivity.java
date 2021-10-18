@@ -183,7 +183,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
             @Override
             public void run() {
 
-                if (seconds==0){
+                if (seconds==0 && totalTimeInMin==1){
                     totalTimeInMin--;
                     seconds=59;
                 }else if(seconds==0 &&totalTimeInMin==0)
@@ -235,8 +235,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
              String getUserSelectedAnswer =questionsList.get(i).getUserSelectedAnswer();
              String getAnswer =questionsList.get(i).getAnswer();
 
-            Log.d("TAG","selected ++++" +getUserSelectedAnswer);
-            Log.d("TAG","answer ++++" +getAnswer);
+
 
             if (getUserSelectedAnswer.equals(getAnswer)){
                 correctAnswers++;
@@ -248,17 +247,17 @@ private AppCompatButton option1,option2 ,option3 ,option4;
 
 
     private int getIncorrectAnswers(){
-        int correctAnswers=0;
+        int incorrectAnswers=0;
         for (int i=0;i<questionsList.size();i++){
-            final String getUserSelectedAnswer =questionsList.get(i).getUserSelectedAnswer();
-            final String getAnswer =questionsList.get(i).getAnswer();
+              String getUserSelectedAnswer =questionsList.get(i).getUserSelectedAnswer();
+              String getAnswer =questionsList.get(i).getAnswer();
 
             if (!getUserSelectedAnswer.equals(getAnswer)){
-                correctAnswers++;
+                incorrectAnswers++;
 
             }
         }
-        return correctAnswers;
+        return incorrectAnswers;
     }
 
 
