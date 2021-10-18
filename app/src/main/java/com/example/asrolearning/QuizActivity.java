@@ -29,10 +29,12 @@ private AppCompatButton option1,option2 ,option3 ,option4;
     private int totalTimeInMin=1;
     private int seconds=0;
 
-    private List<Questions> questionsList;
+    private ArrayList<Questions> questionsList;
     private  int  currentQuestionPosition =0;
 
     private  String selectedOptionByUser="";
+
+    private AsRoLearningDBHelper DbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,11 +57,14 @@ private AppCompatButton option1,option2 ,option3 ,option4;
         option4=findViewById(R.id.option4);
         nextBtn=findViewById(R.id.nextBtn);
 
+        DbHelper = new AsRoLearningDBHelper(this);
+
+        questionsList = DbHelper.getAllQuestions(getSelectedTopicName);
+
         AsRoLearningDBHelper  dbHelper=new AsRoLearningDBHelper(this);
         questionsList=dbHelper.getAllQuestions(getSelectedTopicName);
 
-/*
-        //   questionsList=QuestionsBank.getQuestions(getSelectedTopicName);
+   //questionsList=QuestionsBank.getQuestions(getSelectedTopicName);
 
        startTimer(timer);
       questions.setText((currentQuestionPosition+1)+"/"+questionsList.size());
@@ -133,7 +138,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
             startActivity(new Intent(QuizActivity.this,MainActivity.class));
             finish();
         });
-        */
+
 
     }
 

@@ -2,22 +2,26 @@ package com.example.asrolearning;
 
 public class Questions {
 
-   private  String question, option1,option2,option3,option4, answer;
-   private String userSelectedAnswer;
+    private String question, option1, option2, option3, option4, answer, category;
+    private String userSelectedAnswer;
 
 
-    public Questions() {  }
-   public Questions(String  question,String option1,
-                        String option2,String option3,
-                        String option4, String answer,
-                        String userSelectedAnswer)
-   {   this.question=question;
-       this.option1=option1;
-       this.option2=option2;
-       this.option3=option3;
-       this.option4=option4;
-       this.answer=answer;
-       this.userSelectedAnswer=userSelectedAnswer; }
+    public Questions() {
+    }
+
+    public Questions(String question, String option1,
+                     String option2, String option3,
+                     String option4, String answer, String category,
+                     String userSelectedAnswer) {
+        this.question = question;
+        this.option1 = option1;
+        this.option2 = option2;
+        this.option3 = option3;
+        this.option4 = option4;
+        this.answer = answer;
+        this.category = category;
+        this.userSelectedAnswer = userSelectedAnswer;
+    }
 
     public String getQuestion() {
         return question;
@@ -45,6 +49,14 @@ public class Questions {
 
     public String getUserSelectedAnswer() {
         return userSelectedAnswer;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public void setQuestion(String question) {
