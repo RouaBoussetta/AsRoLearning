@@ -41,7 +41,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        final ImageView backbtn=findViewById(R.id.backbtn);
+
         final TextView SelectedTopicName=findViewById(R.id.topicName);
         final String getSelectedTopicName=getIntent().getStringExtra("selectedTopic");
 
@@ -123,13 +123,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
             }
         });
 
-        backbtn.setOnClickListener(view -> {
-            quizTimer.purge();
-            quizTimer.cancel();
-
-            startActivity(new Intent(QuizActivity.this,MainActivity.class));
-            finish();
-        });
+  
 
 
     }
