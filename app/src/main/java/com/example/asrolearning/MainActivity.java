@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                     Intent intent=new Intent(MainActivity.this,AboutTopicActivity.class);
                     intent.putExtra("selectedTopic",selectedTopic);
+
                     startActivity(intent);
                 }
             }

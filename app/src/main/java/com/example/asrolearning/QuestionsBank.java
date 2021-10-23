@@ -5,167 +5,48 @@ import java.util.List;
 
 public class QuestionsBank {
 
-    private static List<QuestionsList> SpringBootQuestions(){
+    private static List<Questions> Topic1Questions(){
 
-        final List <QuestionsList> questionsLists=new ArrayList<>();
-
-        final QuestionsList question1=new QuestionsList("Which of these is a valid Advice annotation?","@AfterError","@AfterReturning","@AfterException","@AfterExecution","@AfterReturning","");
-        final QuestionsList question2=new QuestionsList("What does a ViewResolver do?","It supports internationalization of web applications by detecting a user's locale","It generates a view by mapping a logical view name returned by a controller method to a view technology","It creates a unique view determined by the uers's browser type,supporting cross-browser compatibility","It maps custom parameters to SQL views in the database, allowing for dynamic content to be created in the response","It generates a view by mapping a logical view name returned by a controller method to a view technology","");
-        final QuestionsList question3=new QuestionsList("The process of linking aspects with other objects to create an advised object is called","dynamic chaining","banding","weaving","interleaving","weaving","");
-        final QuestionsList question4=new QuestionsList("Which of these is not a valid method on the JoinPoint interface?","getArgs()","getExceptions()","getSignature()","getTarget()","getExceptions()","");
-        final QuestionsList question5=new QuestionsList("What is the root interface for accessing a Spring bean container?","SpringInitContainer","ResourceLoader","ApplicationEventPublisher","BeanFactory","BeanFactory","");
-        final QuestionsList question6=new QuestionsList("Which annotation can be used within Spring Security to apply method level security?","@Secured","@RequiresRole","@RestrictedTo","@SecurePath","@Secured","");
-        final QuestionsList question7=new QuestionsList("Which property can be used to change the port of a Spring application?","Port","spring.port","spring.settings.port","server.port","server.port","");
-        final QuestionsList question8=new QuestionsList("What is the name of the central servlet that dispatches requests to controllers?","DispatchingDelegatorServlet","DispatcherServlet"," Router","FrontControllerServlet","DispatcherServlet","");
-        final QuestionsList question9=new QuestionsList("Modularization of a concern that cuts across multiple classes is known as a(n)_","multiclass","aspect","crosscut","sidecut","aspect","");
-        final QuestionsList question10=new QuestionsList("Assuming no additional configuration is provided, what is the first selection criteria Spring uses to choose a bean when autowiring a property?","none of these answers","bean type","bean size"," bean name"," bean name","");
+        final List <Questions> questionsLists=new ArrayList<>();
+/*
+        final Questions question1=new Questions("what is the size of int variable","16 bit","aa","aa","aa","aa","");
+        final Questions question2=new Questions("what is the size of int variable","16 bit","aa","aa","aa","aa","");
+        final Questions question3=new Questions("what is the size of int variable","16 bit","aa","aa","aa","aa","");
+        final Questions question4=new Questions("what is the size of int variable","16 bit","aa","aa","aa","aa","");
 
         questionsLists.add(question1);
         questionsLists.add(question2);
         questionsLists.add(question3);
         questionsLists.add(question4);
-        questionsLists.add(question5);
-        questionsLists.add(question6);
-        questionsLists.add(question7);
-        questionsLists.add(question8);
-        questionsLists.add(question9);
-        questionsLists.add(question10);
 
-
+*/
         return questionsLists;
     }
 
-    private static List<QuestionsList> AngularQuestions(){
+    private static List<Questions> MavenQuestions(){
 
-        final List <QuestionsList> questionsLists=new ArrayList<>();
-
-        final QuestionsList question1=new QuestionsList("What is the RouterModule.forRoot method used for?","Registering any providers that you intend to use in routed components.","Registering route definitions at the root application level.","Indicating that Angular should cheer on your routes to be successful.","Declaring that you intend to use routing only at the root level.","Registering route definitions at the root application level.","");
-        final QuestionsList question2=new QuestionsList("What are the two component decorator metadata properties used to set up CSS styles for a component?","  viewEncapsulation and viewEncapsulationFiles.","There is only one and it is the property named css.","css and cssUrl.","styles and styleUrls.","styles and styleUrls.","");
-        final QuestionsList question3=new QuestionsList("What directive is used to link an <a> tag to routing?"," routeTo","routerLink","routePath","appLink","routerLink","");
-        final QuestionsList question4=new QuestionsList("You want to see what files would be generated by creating a new contact-card component. Which command would you use?"," ng generate component contact-card --dry-run","ng generate component contact-card --no-files","ng generate component component --dry","ng generate component --exclude","ng generate component contact-card --dry-run","");
-        final QuestionsList question5=new QuestionsList("What are Angular lifecycle hooks?"," loggers for tracking the health of an Angular app","providers that can be used to track the instances of components","built-in pipes that can be used in templates for DOM events","reserved named methods for components and directives that Angular will call during set times in its execution, and can be used to tap into those lifecycle moments","reserved named methods for components and directives that Angular will call during set times in its execution, and can be used to tap into those lifecycle moments","");
-        final QuestionsList question6=new QuestionsList("In order for Angular to process components in an application, where do the component types need to be registered?"," within a script tag in the index.html file","in an NgModule decorator metadata tag named components"," No registration is needed simply include the component files in an app directory.","in an NgModule decorator metadata property named declarations","in an NgModule decorator metadata property named declarations","");
-        final QuestionsList question7=new QuestionsList("In reactive forms, what Angular form class type is used on the native DOM element to wire it up?"," FormArray","FormControl","FormGroup","all of these answers","FormGroup","");
-        final QuestionsList question8=new QuestionsList("How does the emulated view encapsulation mode handle CSS for a component?","  It renders the CSS exactly how you wrote it without any changes.","It makes use of shadow DOM markup and CSS.","It creates unique attributes for DOM elements and scopes the CSS selectors you write to those attribute ids."," It renders all of the CSS rules you write as inline CSS on all of the DOM elements you use them on in the template.\n","It creates unique attributes for DOM elements and scopes the CSS selectors you write to those attribute ids.","");
-        final QuestionsList question9=new QuestionsList("What is the primary difference between a component and a directive?"," A component uses a selector metadata property and a directive does not.","A directive can be used for adding custom events to the DOM and a component cannot.","A component has a template and a directive does not.","A directive can target only native DOM elements.","A component has a template and a directive does not.","");
-        final QuestionsList question10=new QuestionsList("Pick the best description for this template syntax code: <span>Boss: {{job?.bossName}} </span>"," \n" +
-                " The ? is shorthand for the async pipe. The job value must be an Observable."," It is using the safe navigation operator (?) on the job field. If the job field is undefined, the access to the bossName will be ignored and no error will occur.","There is an error in the template syntax. The ? is not valid here.","It is diplaying the job value if it has one; otherwise it is displaying the bossName."," It is using the safe navigation operator (?) on the job field. If the job field is undefined, the access to the bossName will be ignored and no error will occur.","");
+        final List <Questions> questionsLists=new ArrayList<>();
+/*
+        final Questions question1=new Questions("What element in the pom.xml file allows you to provide values that can be reused in other elements of the pom.xml?"," Plugins","Build","Properties","Parent","Parent","");
+        final Questions question2=new Questions(" If you wish to build and package your artifact using the Maven package goal but don't want to execute the unit tests, which environment variable and value would you use?","maven.test.ignore=TRUE","maven.test.run=FALSE","maven.test.skip=TRUE"," maven.verify.execute=FALSE","maven.test.skip=TRUE","");
+        final Questions question3=new Questions("What directory structure contains the source code of your artifact?"," src/code"," src/test/java"," src/main/java"," src/main/resources"," src/main/java","");
+        final Questions question4=new Questions("Which command is used to run the clean lifecyle followed by verify, install, and package with Maven?","mvn package","mvn clean install package","mvn clean install","mvn clear install","mvn package","");
 
         questionsLists.add(question1);
         questionsLists.add(question2);
         questionsLists.add(question3);
-        questionsLists.add(question4);
-        questionsLists.add(question5);
-        questionsLists.add(question6);
-        questionsLists.add(question7);
-        questionsLists.add(question8);
-        questionsLists.add(question9);
-        questionsLists.add(question10);
-
-
-        return questionsLists;
-    }
-
-    private static List<QuestionsList> NodeJsQuestions(){
-
-        final List <QuestionsList> questionsLists=new ArrayList<>();
-
-        final QuestionsList question1=new QuestionsList("When a javaScript function is invoked (called) in Node, where is a new frame placed?"," the call stack","the event loop","the poll phase"," the events queue","the call stack","");
-        final QuestionsList question2=new QuestionsList("Which of the following is a core module in Node?"," webpack","crypto","request","chalk","crypto","");
-        final QuestionsList question3=new QuestionsList("Which of the following Buffer class methods returns an uninitialized buffer?","  allocUnsafe","concat","from","alloc"," allocUnsafe","");
-        final QuestionsList question4=new QuestionsList("Which of the following modules is NOT a built-in module in Node?"," ftp","events"," dgram","http2","ftp","");
-        final QuestionsList question5=new QuestionsList("Which fs module method can be used to read the content of a file without buffering it in memory?"," read","readFile","createReadStream","readFileSync","createReadStream","");
-        final QuestionsList question6=new QuestionsList("Which of the following DNS module methods uses the underlying OS facilities and does not necessarily perform any network communication?","  lookup","resolve","resolve4","reverse"," lookup","");
-        final QuestionsList question7=new QuestionsList("How do you check that a value is a date object in Node?","  util.types.isDate(value)","assert.isDate(value)","console.isDate(value)","util.date(value)"," util.types.isDate(value)","");
-        final QuestionsList question8=new QuestionsList("Can you create an https web server with Node.js?"," no, there are no modules supporting it yet","yes, with the https or http2 modules","yes, through the path module","yes, with the http module","yes, with the https or http2 modules","");
-        final QuestionsList question9=new QuestionsList("Which of the following is a method on the console object?"," exit","test","time","print","time","");
-        final QuestionsList question10=new QuestionsList("Which object is used to manage the cache of required modules?"," global.cache","module.cache","process.cache","require.cache","require.cache","");
-
-        questionsLists.add(question1);
-        questionsLists.add(question2);
-        questionsLists.add(question3);
-        questionsLists.add(question4);
-        questionsLists.add(question5);
-        questionsLists.add(question6);
-        questionsLists.add(question7);
-        questionsLists.add(question8);
-        questionsLists.add(question9);
-        questionsLists.add(question10);
-
-
-        return questionsLists;
-    }
-
-    private static List<QuestionsList> MongoDBQuestions(){
-
-        final List <QuestionsList> questionsLists=new ArrayList<>();
-
-        final QuestionsList question1=new QuestionsList("Which command adds members to the replica set from MongoDB shell?"," rs.add(\"<hostname>\")","replicaSetAdd(\"<hostname>\")","rs.insert(\"<hostname>\")","replica.add(\"<hostname>\")","rs.add(\"<hostname>\")","");
-        final QuestionsList question2=new QuestionsList(" Which MongoDB shell command should you use to back up a database?"," restore","backup","mongobackup","mongodump","mongodump","");
-        final QuestionsList question3=new QuestionsList("What does a MongoDB collection consist of?"," data","documents","fields","rows","documents","");
-        final QuestionsList question4=new QuestionsList("Given a cursor named myCursor, which command returns a boolean value?","  myCursor.hasNext()","myCursor.sort()"," myCursor.next()","myCursor.find()"," myCursor.hasNext()","");
-        final QuestionsList question5=new QuestionsList("Which command returns a specific document in the user's collection?"," db.users.find({_id: 1})","db.users.seek({_id: 1})"," db.users.query({_id: 1})","db.query.users({_id: 1})","db.users.find({_id: 1})","");
-        final QuestionsList question6=new QuestionsList("To import a JSON array into Mongo, what flags are needed with MongoDBimport?"," --type jsonArray"," --json","--type json","--jsonArray","--jsonArray","");
-        final QuestionsList question7=new QuestionsList("Choose the shell command that connects to a MongoDB database."," mongo","mongod","mongoconnect","dbconnect","mongo","");
-        final QuestionsList question8=new QuestionsList("In the MongoDB shell, how can you tell if an index was used with a query?","  db.customers.find({lastName: 'smith'}).explain()"," db.customers.find({lastName: 'smith'}).perf()","db.customers.find({lastName: 'smith'}).plan()"," db.customers.find({lastName: 'smith'}).usedIndex()"," db.customers.find({lastName: 'smith'}).explain()","");
-        final QuestionsList question9=new QuestionsList("What is the recommended way to delete a user?"," db.deleteUser(\"user\")","db.removeUser(\"user\") DEPRECATED","db.remove(\"user\")","db.dropUser(\"user\")","db.dropUser(\"user\")","");
-        final QuestionsList question10=new QuestionsList("What is the purpose of an arbiter in a replica set?"," It monitors replica set and sends email in case of failure"," It casts the tie-breaking vote in an election.","It holds a backup copy of the database.","It reboots the failed server."," It casts the tie-breaking vote in an election.","");
-
-
-        questionsLists.add(question1);
-        questionsLists.add(question2);
-        questionsLists.add(question3);
-        questionsLists.add(question4);
-        questionsLists.add(question5);
-        questionsLists.add(question6);
-        questionsLists.add(question7);
-        questionsLists.add(question8);
-        questionsLists.add(question9);
-        questionsLists.add(question10);
-
-
-        return questionsLists;
-    }
-
-    private static List<QuestionsList> AndroidQuestions(){
-
-        final List <QuestionsList> questionsLists=new ArrayList<>();
-
-        final QuestionsList question1=new QuestionsList("Which XML attribute should be used to make an Image View accessible?"," android:talkBack","android:labelFor","android:hint","android:contentDescription","android:contentDescription","");
-        final QuestionsList question2=new QuestionsList("You want to include about and setting modules in your project. Which files accurately reflects their inclusion?","  in build.gradle:include ':app',':about' ':settings'","in settings.gradle:include ':app',':about' ':settings'","in settings.gradle:include ':about',':settings'","in gradle.properties:include ':app',':about' ':settings'","in settings.gradle:include ':app',':about' ':settings'","");
-        final QuestionsList question3=new QuestionsList("What is the benifit of using @VisibleForTesting annotation?"," to denote that a class, methos, or field has its visibility relaxed to make code testable","to denote that a class, method, or field is visible only in the test code","to denote that a class, method, or field has its visibility increased to make code less testable"," to throw a run-time error if a class, methos, or field with this annotation is accessed improperly","to denote that a class, methos, or field has its visibility relaxed to make code testable","");
-        final QuestionsList question4=new QuestionsList("When will an activity's onActivityResult()be called?"," when calling finish()in the parent activity","when placing an app into the background by sitching to another app","When onStop() is called in the target activity","when calling finish() in the target activity","when calling finish() in the target activity","");
-        final QuestionsList question5=new QuestionsList(" When would you use a product flavour in your build setup?"," when you need to have the app's strings present in multiple lanuages","when you have to provide different versions of your app based on the physical device size","when you want to provide different versions of your app based on the device screen density","when you want to provide different version of your app with custom configuration and resources","when you want to provide different version of your app with custom configuration and resources","");
-        final QuestionsList question6=new QuestionsList("What allows you to properly restore a user's state when an activity is restarted?"," the onSaveInstance()method"," all of these answers","persistent storage","ViewModel objects","the onSaveInstance()method","");
-        final QuestionsList question7=new QuestionsList("IF the main thread is blocked for too long, the system displays the _ dialog?"," Thread Not Responding","Application Paused"," Application Not Responding","Application Blocked"," Application Not Responding","");
-        final QuestionsList question8=new QuestionsList("You need to get a list of devices that are attached to your computer with USB debugging enable. Which command would execute using the Android Debug Bridge?"," list devices"," adb devices"," list avd"," dir devices"," adb devices","");
-        final QuestionsList question9=new QuestionsList("To persist a small collection of key-value data, what should you use?"," external file storage","SharedPereferences","SQLite","internal file storage","SharedPereferences","");
-        final QuestionsList question10=new QuestionsList("Given the test class below, which code snippet would be a correct assertion?"," assertThat(resultAdd).is(2.0)","assertNotNull(resultAdd)","assertThat(resultAdd).isWqualTo(2.0)"," assertThat(resultAdd)","assertNotNull(resultAdd)","");
-
-        questionsLists.add(question1);
-        questionsLists.add(question2);
-        questionsLists.add(question3);
-        questionsLists.add(question4);
-        questionsLists.add(question5);
-        questionsLists.add(question6);
-        questionsLists.add(question7);
-        questionsLists.add(question8);
-        questionsLists.add(question9);
-        questionsLists.add(question10);
+        questionsLists.add(question4);*/
 
 
         return questionsLists;
     }
 
 
-    public static List<QuestionsList> getQuestions(String selectedTopicName){
+    public static List<Questions> getQuestions(String selectedTopicName){
         switch (selectedTopicName){
-            case "Spring Boot": return SpringBootQuestions();
-            case "Angular": return AngularQuestions();
-            case "NodeJs": return NodeJsQuestions();
-            case "Mongo DB": return MongoDBQuestions();
-            case "Android": return AndroidQuestions();
-            default:return SpringBootQuestions();
+            case "c1": return Topic1Questions();
+            case "c2": return MavenQuestions();
+            default:return Topic1Questions();
         }
     }
 
