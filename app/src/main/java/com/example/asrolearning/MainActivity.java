@@ -6,71 +6,99 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView tName;
 
     private String selectedTopic="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        tName = findViewById(R.id.name);
+        String name = getIntent().getStringExtra("name");
+        tName.setText(name);
 
 
 
-        final LinearLayout c1=findViewById(R.id.c1) ;
 
-        final LinearLayout c2=findViewById(R.id.c2) ;
-        final LinearLayout c3=findViewById(R.id.c3) ;
-        final LinearLayout c4=findViewById(R.id.c4) ;
+        final LinearLayout springboot=findViewById(R.id.springBoot) ;
+
+        final LinearLayout android=findViewById(R.id.android) ;
+        final LinearLayout angular=findViewById(R.id.angular) ;
+        final LinearLayout mongodb=findViewById(R.id.mongoDb) ;
+        final LinearLayout nodejs=findViewById(R.id.nodeJs) ;
         final Button start=findViewById(R.id.start) ;
 
 
-        c1.setOnClickListener(new View.OnClickListener() {
+        springboot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-           selectedTopic="c1";
-                c1.setBackgroundResource(R.drawable.round_back_white_stroke10);
-                c2.setBackgroundResource(R.drawable.round_background);
-                c3.setBackgroundResource(R.drawable.round_background);
-                c4.setBackgroundResource(R.drawable.round_background);
+           selectedTopic="Spring Boot";
+                springboot.setBackgroundResource(R.drawable.round_back_white_stroke10);
+                android.setBackgroundResource(R.drawable.round_background);
+                angular.setBackgroundResource(R.drawable.round_background);
+                mongodb.setBackgroundResource(R.drawable.round_background);
+                nodejs.setBackgroundResource(R.drawable.round_background);
             }
         });
 
 
-        c2.setOnClickListener(new View.OnClickListener() {
+        android.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedTopic="c2";
-                c1.setBackgroundResource(R.drawable.round_background);
-                c2.setBackgroundResource(R.drawable.round_back_white_stroke10);
-                c3.setBackgroundResource(R.drawable.round_background);
-                c4.setBackgroundResource(R.drawable.round_background);
+                selectedTopic="Android";
+                springboot.setBackgroundResource(R.drawable.round_background);
+                android.setBackgroundResource(R.drawable.round_back_white_stroke10);
+                angular.setBackgroundResource(R.drawable.round_background);
+                mongodb.setBackgroundResource(R.drawable.round_background);
+                nodejs.setBackgroundResource(R.drawable.round_background);
+
             }
         });
-        c3.setOnClickListener(new View.OnClickListener() {
+        angular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedTopic="c3";
-                c1.setBackgroundResource(R.drawable.round_background);
-                c2.setBackgroundResource(R.drawable.round_background);
-                c3.setBackgroundResource(R.drawable.round_back_white_stroke10);
-                c4.setBackgroundResource(R.drawable.round_background);
+                selectedTopic="Angular";
+                springboot.setBackgroundResource(R.drawable.round_background);
+                android.setBackgroundResource(R.drawable.round_background);
+                angular.setBackgroundResource(R.drawable.round_back_white_stroke10);
+                mongodb.setBackgroundResource(R.drawable.round_background);
+                nodejs.setBackgroundResource(R.drawable.round_background);
+
             }
         });
-        c4.setOnClickListener(new View.OnClickListener() {
+        mongodb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedTopic="c4";
-                c1.setBackgroundResource(R.drawable.round_background);
-                c2.setBackgroundResource(R.drawable.round_background);
-                c3.setBackgroundResource(R.drawable.round_background);
-                c4.setBackgroundResource(R.drawable.round_back_white_stroke10);
+                selectedTopic="Mongo DB";
+                springboot.setBackgroundResource(R.drawable.round_background);
+                android.setBackgroundResource(R.drawable.round_background);
+                angular.setBackgroundResource(R.drawable.round_background);
+                mongodb.setBackgroundResource(R.drawable.round_back_white_stroke10);
+                nodejs.setBackgroundResource(R.drawable.round_background);
+
             }
         });
+
+
+        nodejs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectedTopic="NodeJS";
+                springboot.setBackgroundResource(R.drawable.round_background);
+                android.setBackgroundResource(R.drawable.round_background);
+                angular.setBackgroundResource(R.drawable.round_background);
+                mongodb.setBackgroundResource(R.drawable.round_background);
+                nodejs.setBackgroundResource(R.drawable.round_back_white_stroke10);
+
+            }
+        });
+
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,24 +109,12 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this,"Please Select The Topic",Toast.LENGTH_SHORT).show();
 
                 }else{
-                    Intent intent=new Intent(MainActivity.this,QuizActivity.class);
+                    Intent intent=new Intent(MainActivity.this,AboutTopicActivity.class);
                     intent.putExtra("selectedTopic",selectedTopic);
+
                     startActivity(intent);
                 }
             }
         });
-
-
     }
-
-
-<EditText
-    android:id="@+id/username"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="User Name"
-
-
-
-
 }
