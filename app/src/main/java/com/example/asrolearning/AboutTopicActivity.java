@@ -15,8 +15,8 @@ import java.util.List;
 
 public class AboutTopicActivity extends AppCompatActivity {
 
-
     private TopicDefinitions topicDefinition;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

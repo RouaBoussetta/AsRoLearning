@@ -8,6 +8,28 @@
     android:orientation="vertical"
     tools:context=".AboutTopicActivity">
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="cc"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:layout_margin="20sp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="120dp"
+        android:textColor="@android:color/black"/>
+
+
+
+
+
+
+
+
+
+
+
     <LinearLayout
 
         android:layout_width="match_parent"
@@ -18,6 +40,10 @@
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="290dp"
         android:orientation="horizontal">
+
+
+
+
 
 
         <ImageView
