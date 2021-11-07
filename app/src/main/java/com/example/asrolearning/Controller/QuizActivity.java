@@ -9,7 +9,6 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.asrolearning.DAO.UserDao;
 import com.example.asrolearning.DB.AsRoLearningDBHelper;
 import com.example.asrolearning.DB.UserDatabase;
@@ -68,7 +67,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
         questionsList = DbHelper.getAllQuestions(getSelectedTopicName);
 
        startTimer(timer);
-      questions.setText((currentQuestionPosition+1)+"/"+questionsList.size());
+        questions.setText((currentQuestionPosition+1)+"/"+questionsList.size());
 
         question.setText(questionsList.get(0).getQuestion());
         option1.setText(questionsList.get(0).getOption1());
@@ -169,6 +168,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
 
             UserDatabase userDatabase = UserDatabase.getUserDatabase(getApplicationContext());
             UserDao userDao = userDatabase.userDao();
+
             new Thread(new Runnable() {
                 @Override
                 public void run() {
