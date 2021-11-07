@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/backgroundresult"
-    tools:context=".SplashActivity">
+    tools:context=".Controller.SplashActivity">
+
 
 <LinearLayout
     android:id="@+id/l"

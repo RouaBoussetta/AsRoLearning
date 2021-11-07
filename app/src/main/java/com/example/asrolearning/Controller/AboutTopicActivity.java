@@ -1,4 +1,4 @@
-package com.example.asrolearning;
+package com.example.asrolearning.Controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,16 +7,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.List;
+import com.example.asrolearning.R;
+import com.example.asrolearning.TopicBank;
+import com.example.asrolearning.TopicDefinitions;
+
 
 public class AboutTopicActivity extends AppCompatActivity {
 
-
     private TopicDefinitions topicDefinition;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class AboutTopicActivity extends AppCompatActivity {
 
         SelectedTopic.setText(getSelectedTopic);
 
-        topicDefinition=TopicBank.getDefinition(getSelectedTopic);
+        topicDefinition= TopicBank.getDefinition(getSelectedTopic);
         description.setText(topicDefinition.getDescription());
 
         if (getSelectedTopic.equals("Spring Boot")){
@@ -60,7 +61,7 @@ public class AboutTopicActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                    Intent intent=new Intent(AboutTopicActivity.this,QuizActivity.class);
+                    Intent intent=new Intent(AboutTopicActivity.this, QuizActivity.class);
                 intent.putExtra("selectedTopic",getSelectedTopic);
                     startActivity(intent);
 

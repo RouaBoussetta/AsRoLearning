@@ -1,4 +1,4 @@
-package com.example.asrolearning;
+package com.example.asrolearning.Models;
 
 public class Questions {
 

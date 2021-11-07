@@ -9,30 +9,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AsRoLearning">
+
         <activity
-            android:name=".SplashActivity"
-            android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:name=".Controller.Login"
+            android:exported="true" />
+        <activity
+            android:name=".Controller.UserRegister"
+            android:exported="true" />
+        <activity
+            android:name=".Controller.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
-            android:name=".AboutTopicActivity"
+            android:name=".Controller.AboutTopicActivity"
             android:exported="true" />
         <activity
-            android:name=".QuizResultsActivity"
+            android:name=".Controller.QuizResultsActivity"
             android:exported="true" />
         <activity
-            android:name=".QuizActivity"
+            android:name=".Controller.QuizActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true"/>
-
-
+            android:name=".Controller.MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

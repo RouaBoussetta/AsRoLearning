@@ -1,20 +1,18 @@
-package com.example.asrolearning;
+package com.example.asrolearning.Controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-
+import com.example.asrolearning.DB.AsRoLearningDBHelper;
+import com.example.asrolearning.Models.Questions;
+import com.example.asrolearning.R;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -127,7 +125,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
             quizTimer.purge();
             quizTimer.cancel();
 
-            startActivity(new Intent(QuizActivity.this,MainActivity.class));
+            startActivity(new Intent(QuizActivity.this, MainActivity.class));
             finish();
         });
 
@@ -164,7 +162,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
             option4.setText(questionsList.get(currentQuestionPosition).getOption4());
         }else
         {
-            Intent intent=new Intent(QuizActivity.this,QuizResultsActivity.class);
+            Intent intent=new Intent(QuizActivity.this, QuizResultsActivity.class);
 
             intent.putExtra("correct",getCorrectAnswers());
             intent.putExtra("Incorrect",getIncorrectAnswers());
@@ -191,7 +189,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
                     quizTimer.purge();
                     quizTimer.cancel();
                     Toast.makeText(QuizActivity.this,"Time Over",Toast.LENGTH_SHORT).show();
-                    Intent intent =new Intent(QuizActivity.this,QuizResultsActivity.class);
+                    Intent intent =new Intent(QuizActivity.this,  QuizResultsActivity.class);
                     intent.putExtra("correct",  getCorrectAnswers());
                     intent.putExtra("incorrect",  getCorrectAnswers());
                     startActivity(intent);

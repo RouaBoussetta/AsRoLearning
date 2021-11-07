@@ -1,4 +1,4 @@
-package com.example.asrolearning;
+package com.example.asrolearning.DB;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -6,10 +6,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.os.Bundle;
 import android.util.Log;
 
-import com.example.asrolearning.AsRoLearningContract.*;
+
+import com.example.asrolearning.Models.Questions;
+
+
 
 import java.util.ArrayList;
 import java.util.List;

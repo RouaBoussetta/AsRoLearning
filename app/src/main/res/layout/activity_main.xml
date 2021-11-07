@@ -6,7 +6,35 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
    android:background="@drawable/background"
-    tools:context=".MainActivity">
+    tools:context=".Controller.MainActivity">
+
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hello"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:layout_margin="20sp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="120dp"
+            android:textColor="@android:color/black"/>
+
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="25sp"
+        android:layout_marginTop="25sp"
+        android:layout_marginEnd="25sp"
+        android:layout_marginBottom="50dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="60sp" />
 
     <LinearLayout
         android:id="@+id/topicLayout"
@@ -17,9 +45,11 @@
 
         <TextView
             android:id="@+id/topic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_width="176dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="120dp"
+
 
             android:fontFamily="@font/anaktoria"
             android:text="Choose Topic"
@@ -31,8 +61,10 @@
         <ImageView
             android:id="@+id/logo"
 
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="95dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="5dp"
 
             android:background="@drawable/logo"></ImageView>
 

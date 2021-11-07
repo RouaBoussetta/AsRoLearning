@@ -1,4 +1,4 @@
-package com.example.asrolearning;
+package com.example.asrolearning.Controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.asrolearning.R;
 
 public class QuizResultsActivity extends AppCompatActivity {
 
@@ -30,7 +32,7 @@ public class QuizResultsActivity extends AppCompatActivity {
         startNewQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(QuizResultsActivity.this,MainActivity.class));
+                startActivity(new Intent(QuizResultsActivity.this, MainActivity.class));
 
                 finish();
             }
