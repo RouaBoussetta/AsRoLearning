@@ -17,6 +17,9 @@ public class QuizResultsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_results);
 
+        TextView tName = findViewById(R.id.name);
+        String name = getIntent().getStringExtra("name");
+        tName.setText("hhh");
 
 
 
@@ -40,10 +43,5 @@ public class QuizResultsActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onBackPressed() {
-        startActivity(new Intent(QuizResultsActivity.this,MainActivity.class));
 
-        finish();
-    }
 }

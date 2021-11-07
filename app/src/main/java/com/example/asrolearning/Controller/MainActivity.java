@@ -10,18 +10,23 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.asrolearning.DAO.UserDao;
+import com.example.asrolearning.DB.UserDatabase;
+import com.example.asrolearning.Models.User;
 import com.example.asrolearning.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView tName;
 
+    private String current="";
     private String selectedTopic="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        tName = findViewById(R.id.name);
+
+
+        TextView tName = findViewById(R.id.name);
         String name = getIntent().getStringExtra("name");
         tName.setText(name);
 
@@ -106,15 +111,27 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
                 if (selectedTopic.isEmpty()){
                     Toast.makeText(MainActivity.this,"Please Select The Topic",Toast.LENGTH_SHORT).show();
 
                 }else{
-                    Intent intent=new Intent(MainActivity.this, AboutTopicActivity.class);
-                    intent.putExtra("selectedTopic",selectedTopic);
 
-                    startActivity(intent);
+                    UserDatabase userDatabase = UserDatabase.getUserDatabase(getApplicationContext());
+                    UserDao userDao = userDatabase.userDao();
+
+
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            User user = userDao.getUser(name);
+
+                                String current = user.getName();
+                                startActivity(new Intent(
+                                        MainActivity.this, AboutTopicActivity.class).putExtra("selectedTopic",selectedTopic)
+                                        .putExtra("name", current));
+
+                        }
+                    }).start();
                 }
             }
         });

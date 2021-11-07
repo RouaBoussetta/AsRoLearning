@@ -9,8 +9,12 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.asrolearning.DAO.UserDao;
 import com.example.asrolearning.DB.AsRoLearningDBHelper;
+import com.example.asrolearning.DB.UserDatabase;
 import com.example.asrolearning.Models.Questions;
+import com.example.asrolearning.Models.User;
 import com.example.asrolearning.R;
 import java.util.ArrayList;
 import java.util.Timer;
@@ -22,7 +26,8 @@ private AppCompatButton option1,option2 ,option3 ,option4;
     private AppCompatButton nextBtn;
     private  TextView questions;
     private TextView question;
-
+    private String getSelectedTopicName="";
+    private  String name="";
     private Timer quizTimer;
     private int totalTimeInMin=1;
     private int seconds=0;
@@ -39,9 +44,16 @@ private AppCompatButton option1,option2 ,option3 ,option4;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
+
+        TextView tName = findViewById(R.id.name);
+          name = getIntent().getStringExtra("name");
+        tName.setText("sdfghjklmù");
+
+
+
         final ImageView backbtn=findViewById(R.id.backbtn);
         final TextView SelectedTopicName=findViewById(R.id.topicName);
-        final String getSelectedTopicName=getIntent().getStringExtra("selectedTopic");
+          getSelectedTopicName=getIntent().getStringExtra("selectedTopic");
 
         final TextView timer=findViewById(R.id.timer);
         SelectedTopicName.setText(getSelectedTopicName);
@@ -162,13 +174,32 @@ private AppCompatButton option1,option2 ,option3 ,option4;
             option4.setText(questionsList.get(currentQuestionPosition).getOption4());
         }else
         {
+/*
+            UserDatabase userDatabase = UserDatabase.getUserDatabase(getApplicationContext());
+            UserDao userDao = userDatabase.userDao();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    User user = userDao.getUser(name);
+                    String current = user.getName();
+                    startActivity(new Intent(
+                            QuizActivity.this, QuizResultsActivity.class)
+                        .putExtra("selectedTopic",getSelectedTopicName)
+                            .putExtra("name", current)
+                            .putExtra("incorrect",  getCorrectAnswers())
+                            .putExtra("correct",  getCorrectAnswers()));
+
+                }
+            }).start();*/
+
+
+
             Intent intent=new Intent(QuizActivity.this, QuizResultsActivity.class);
 
             intent.putExtra("correct",getCorrectAnswers());
             intent.putExtra("Incorrect",getIncorrectAnswers());
             startActivity(intent);
             finish();
-
         }
 
 
@@ -189,13 +220,39 @@ private AppCompatButton option1,option2 ,option3 ,option4;
                     quizTimer.purge();
                     quizTimer.cancel();
                     Toast.makeText(QuizActivity.this,"Time Over",Toast.LENGTH_SHORT).show();
+
+
+                    UserDatabase userDatabase = UserDatabase.getUserDatabase(getApplicationContext());
+                    UserDao userDao = userDatabase.userDao();
+
+
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            User user = userDao.getUser(name);
+
+                            String current = user.getName();
+                            startActivity(new Intent(
+                                    QuizActivity.this,  QuizResultsActivity.class)
+                                    .putExtra("selectedTopic",getSelectedTopicName)
+                                    .putExtra("name", current)
+                                    .putExtra("incorrect",  getCorrectAnswers())
+                                    .putExtra("correct",  getCorrectAnswers()));
+
+                        }
+                    }).start();
+
+                    /*
+                    quizTimer.purge();
+                    quizTimer.cancel();
+                    Toast.makeText(QuizActivity.this,"Time Over",Toast.LENGTH_SHORT).show();
                     Intent intent =new Intent(QuizActivity.this,  QuizResultsActivity.class);
                     intent.putExtra("correct",  getCorrectAnswers());
                     intent.putExtra("incorrect",  getCorrectAnswers());
                     startActivity(intent);
 
                     finish();
-
+*/
                 }
                 else{
                     seconds--;

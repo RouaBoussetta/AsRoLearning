@@ -25,6 +25,12 @@ public class AboutTopicActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_topic);
+
+        TextView tName = findViewById(R.id.name);
+        String name = getIntent().getStringExtra("name");
+        tName.setText(name);
+
+
         Button button = findViewById(R.id.viewPDF);
         final ImageView logoTopic=findViewById(R.id.logoTopic) ;
 
