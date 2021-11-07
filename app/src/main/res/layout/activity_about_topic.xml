@@ -23,13 +23,6 @@
 
 
 
-
-
-
-
-
-
-
     <LinearLayout
 
         android:layout_width="match_parent"
@@ -107,13 +100,25 @@
 
     </LinearLayout>
 
+
+    <Button
+        android:id="@+id/viewPDF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="510sp"
+        android:layout_marginRight="70dp"
+        android:background="@drawable/round_button"
+        android:text="Consult courses" />
+
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/descriptionLayout"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="500dp"
         android:background="@drawable/round_button"
