@@ -11,7 +11,8 @@ public interface UserDao {
     @Query("SELECT * from users where name =(:name) and password=(:password)")
     UserEntity login(String name, String password);
 
-
+    @Query("SELECT * FROM users WHERE name =(:name) LIMIT 1")
+    UserEntity getUser(String name);
 
 
 

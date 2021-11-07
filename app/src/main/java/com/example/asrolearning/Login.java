@@ -66,9 +66,10 @@ public class Login extends AppCompatActivity {
                                 });
                             }else {
                                 String name = userEntity.name;
+                                String image = userEntity.getProfileImage();
                                 startActivity(new Intent(
                                         Login.this, MainActivity.class)
-                                        .putExtra("name", name));
+                                        .putExtra("name", name).putExtra("image",image));
                             }
                         }
                     }).start();

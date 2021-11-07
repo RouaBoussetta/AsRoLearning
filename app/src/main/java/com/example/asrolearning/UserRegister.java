@@ -11,6 +11,7 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -23,6 +24,7 @@ public class UserRegister extends AppCompatActivity {
     private CircleImageView ProfileImage;
     private static final int PICK_IMAGE =1;
 
+    ImageView image;
     EditText  password , name, lastName ,email, phone;
     Button register;
     Button login;
@@ -61,6 +63,7 @@ public class UserRegister extends AppCompatActivity {
         email = findViewById(R.id.email);
         phone = findViewById(R.id.phone);
 
+        image=findViewById(R.id.profile_image);
 
 
 
@@ -78,6 +81,7 @@ public class UserRegister extends AppCompatActivity {
                 userEntity.setName(name.getText().toString());
                 userEntity.setEmail(email.getText().toString());
                 userEntity.setPhone(phone.getText().toString());
+                userEntity.setProfileImage(imageUri.toString());
 
                 if(validateInput(userEntity)) {
                     //Do insert operation

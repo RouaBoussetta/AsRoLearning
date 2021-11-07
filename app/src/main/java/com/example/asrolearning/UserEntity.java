@@ -26,7 +26,8 @@ public class UserEntity {
     @ColumnInfo(name = "phone")
     String phone;
 
-
+    @ColumnInfo(name = "ProfileImage")
+    String ProfileImage;
 
     public Integer getId() {
         return id;
@@ -76,5 +77,11 @@ public class UserEntity {
         this.phone = phone;
     }
 
+    public String getProfileImage() {
+        return ProfileImage;
+    }
 
+    public void setProfileImage(String profileImage) {
+        ProfileImage = profileImage;
+    }
 }
