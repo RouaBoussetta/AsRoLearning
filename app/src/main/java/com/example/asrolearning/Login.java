@@ -3,22 +3,35 @@ package com.example.asrolearning;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.IOException;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class Login extends AppCompatActivity {
+
 
     EditText  name , password;
     Button login;
     Button register;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
+
 
         name = findViewById(R.id.name);
         password = findViewById(R.id.password);
@@ -81,4 +94,16 @@ public class Login extends AppCompatActivity {
 
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
 }
