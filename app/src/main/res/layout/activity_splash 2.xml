@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/backgroundresult"
+    tools:context=".SplashActivity">
+
+
+
+
+<LinearLayout
+    android:id="@+id/l"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:layout_marginStart="110dp"
+    android:layout_marginEnd="101dp"
+    android:layout_marginTop="200dp"
+
+
+
+    >
+    <ImageView
+        android:id="@+id/part1"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+
+
+        android:src="@drawable/part1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.426" />
+
+    <ImageView
+        android:id="@+id/part2"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+android:layout_marginTop="20sp"
+
+        android:src="@drawable/part2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.706"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.447" />
+
+</LinearLayout>
+
+
+    <TextView
+        android:id="@+id/slogan"
+        android:layout_width="320dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="90dp"
+
+        android:text="Educational Technology Learning"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="493dp" />
+
+
+</LinearLayout>
