@@ -9,8 +9,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.asrolearning.DAO.UserDao;
 import com.example.asrolearning.DB.TopicBank;
 import com.example.asrolearning.DB.TopicDefinitions;
+import com.example.asrolearning.DB.UserDatabase;
+import com.example.asrolearning.Models.User;
 import com.example.asrolearning.R;
 
 
@@ -20,7 +23,7 @@ public class AboutTopicActivity extends AppCompatActivity {
 
     private TopicDefinitions topicDefinition;
 
-
+     String getSelectedTopic="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +43,7 @@ public class AboutTopicActivity extends AppCompatActivity {
 
 
         final TextView SelectedTopic=findViewById(R.id.topic);
-        final String getSelectedTopic=getIntent().getStringExtra("selectedTopic");
+         getSelectedTopic=getIntent().getStringExtra("selectedTopic");
 
         SelectedTopic.setText(getSelectedTopic);
 
@@ -108,10 +111,23 @@ public class AboutTopicActivity extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                UserDatabase userDatabase = UserDatabase.getUserDatabase(getApplicationContext());
+                UserDao userDao = userDatabase.userDao();
 
-                    Intent intent=new Intent(AboutTopicActivity.this, QuizActivity.class);
-                intent.putExtra("selectedTopic",getSelectedTopic);
-                    startActivity(intent);
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        User user = userDao.getUser(name);
+
+                        String current = user.getName();
+                        startActivity(new Intent(
+                                AboutTopicActivity.this, QuizActivity.class).putExtra("selectedTopic",getSelectedTopic)
+                                .putExtra("name", current));
+
+                    }
+                }).start();
+
 
             }
         });

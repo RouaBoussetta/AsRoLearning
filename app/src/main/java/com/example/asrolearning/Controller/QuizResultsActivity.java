@@ -19,7 +19,7 @@ public class QuizResultsActivity extends AppCompatActivity {
 
         TextView tName = findViewById(R.id.name);
         String name = getIntent().getStringExtra("name");
-        tName.setText("hhh");
+        tName.setText(name);
 
 
 

@@ -31,12 +31,9 @@ private AppCompatButton option1,option2 ,option3 ,option4;
     private Timer quizTimer;
     private int totalTimeInMin=1;
     private int seconds=0;
-
     private ArrayList<Questions> questionsList;
     private  int  currentQuestionPosition =0;
-
     private  String selectedOptionByUser="";
-
     private AsRoLearningDBHelper DbHelper;
 
     @Override
@@ -47,7 +44,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
 
         TextView tName = findViewById(R.id.name);
           name = getIntent().getStringExtra("name");
-        tName.setText("sdfghjklmù");
+        tName.setText(name);
 
 
 
@@ -155,17 +152,12 @@ private AppCompatButton option1,option2 ,option3 ,option4;
             selectedOptionByUser="";
             option1.setBackgroundResource(R.drawable.round_back_white_stroke2);
             option1.setTextColor(Color.parseColor("#1F6888"));
-
-
             option2.setBackgroundResource(R.drawable.round_back_white_stroke2);
             option2.setTextColor(Color.parseColor("#1F6888"));
-
             option3.setBackgroundResource(R.drawable.round_back_white_stroke2);
             option3.setTextColor(Color.parseColor("#1F6888"));
-
             option4.setBackgroundResource(R.drawable.round_back_white_stroke2);
             option4.setTextColor(Color.parseColor("#1F6888"));
-
             questions.setText((currentQuestionPosition+1)+"/"+questionsList.size());
             question.setText(questionsList.get(currentQuestionPosition).getQuestion());
             option1.setText(questionsList.get(currentQuestionPosition).getOption1());
@@ -174,7 +166,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
             option4.setText(questionsList.get(currentQuestionPosition).getOption4());
         }else
         {
-/*
+
             UserDatabase userDatabase = UserDatabase.getUserDatabase(getApplicationContext());
             UserDao userDao = userDatabase.userDao();
             new Thread(new Runnable() {
@@ -190,16 +182,8 @@ private AppCompatButton option1,option2 ,option3 ,option4;
                             .putExtra("correct",  getCorrectAnswers()));
 
                 }
-            }).start();*/
+            }).start();
 
-
-
-            Intent intent=new Intent(QuizActivity.this, QuizResultsActivity.class);
-
-            intent.putExtra("correct",getCorrectAnswers());
-            intent.putExtra("Incorrect",getIncorrectAnswers());
-            startActivity(intent);
-            finish();
         }
 
 
