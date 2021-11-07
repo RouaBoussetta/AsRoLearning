@@ -26,8 +26,16 @@ public class AsRoLearningDBHelper extends SQLiteOpenHelper {
     public static final String CATEGORY_ANGULAR = "ANGULAR";
     public static final String CATEGORY_MONGO = "Mongo DB";
     public static final String CATEGORY_NODE = "NodeJS";
+
+
     private SQLiteDatabase db;
     private List<Questions> questionList;
+
+    public AsRoLearningDBHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+
+
+    }
 
 
     private final String CREATE_TABLE_QUERY = "CREATE TABLE " + QuestionsTable.TABLE_NAME +
@@ -45,11 +53,7 @@ public class AsRoLearningDBHelper extends SQLiteOpenHelper {
     private final String DROP_TABLE_QUERY = "DROP TABLE IF EXISTS " + QuestionsTable.TABLE_NAME;
 
 
-    public AsRoLearningDBHelper(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
 
-
-    }
 
 
     @Override
@@ -60,15 +64,6 @@ public class AsRoLearningDBHelper extends SQLiteOpenHelper {
         setUpQuestions();
         insertQuestions();
     }
-
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-
-        db.execSQL(DROP_TABLE_QUERY);
-        onCreate(db);
-
-    }
-
     private void setUpQuestions() {
         questionList = new ArrayList<>();
 
@@ -165,6 +160,15 @@ public class AsRoLearningDBHelper extends SQLiteOpenHelper {
 
 
     }
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+
+        db.execSQL(DROP_TABLE_QUERY);
+        onCreate(db);
+
+    }
+
+
 
     @SuppressLint("Range")
     private ArrayList<Questions> spring() {

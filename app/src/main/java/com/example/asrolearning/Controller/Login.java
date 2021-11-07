@@ -10,9 +10,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.asrolearning.DAO.UserDao;
+import com.example.asrolearning.DB.UserDatabase;
 import com.example.asrolearning.Models.User;
 import com.example.asrolearning.R;
-import com.example.asrolearning.UserDatabase;
+
 
 public class Login extends AppCompatActivity {
 

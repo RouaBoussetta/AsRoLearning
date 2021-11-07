@@ -1,4 +1,4 @@
-package com.example.asrolearning;
+package com.example.asrolearning.DB;
 
 
 import android.content.Context;
@@ -13,12 +13,12 @@ import com.example.asrolearning.Models.User;
 @Database(entities = {User.class}, version = 1)
 public abstract class UserDatabase extends RoomDatabase {
 
-    private  static final String dbName = "user";
+    private  static final String dbName = "asroLearning";
     private  static UserDatabase userDatabase;
 
     public static synchronized  UserDatabase getUserDatabase(Context context){
         if (userDatabase == null){
-            userDatabase = Room.databaseBuilder(context, UserDatabase.class, dbName).fallbackToDestructiveMigration().build();
+            userDatabase = Room.databaseBuilder(context.getApplicationContext(), UserDatabase.class, dbName).build();
 
         }
         return userDatabase;
