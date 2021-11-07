@@ -26,6 +26,8 @@ public class UserEntity {
     @ColumnInfo(name = "phone")
     String phone;
 
+
+
     public Integer getId() {
         return id;
     }
@@ -73,4 +75,6 @@ public class UserEntity {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+
 }

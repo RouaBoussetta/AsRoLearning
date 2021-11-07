@@ -3,28 +3,65 @@ package com.example.asrolearning;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.IOException;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class UserRegister extends AppCompatActivity {
+
+
+    private CircleImageView ProfileImage;
+    private static final int PICK_IMAGE =1;
 
     EditText  password , name, lastName ,email, phone;
     Button register;
     Button login;
+    Uri imageUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_register);
 
+
+        ProfileImage = (CircleImageView) findViewById(R.id.profile_image);
+        ProfileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent gallery = new Intent();
+                gallery.setType("image/*");
+                gallery.setAction(Intent.ACTION_GET_CONTENT);
+
+                startActivityForResult(Intent.createChooser(gallery, "select Picture"), PICK_IMAGE);
+
+            }
+        });
+
+
+
+
+
+
+
        lastName = findViewById(R.id.lastName);
         password = findViewById(R.id.password);
         name = findViewById(R.id.name);
         email = findViewById(R.id.email);
         phone = findViewById(R.id.phone);
+
+
 
 
         register = findViewById(R.id.register);
@@ -78,6 +115,32 @@ public class UserRegister extends AppCompatActivity {
 
 
     }
+
+
+
+    protected void onActivityResult (int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK){
+         imageUri = data.getData();
+         try {
+             Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
+             ProfileImage.setImageBitmap(bitmap);
+         } catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+
+
+
+
+
+
     private Boolean validateInput(UserEntity userEntity)
     {
         if (userEntity.getName().isEmpty() ||

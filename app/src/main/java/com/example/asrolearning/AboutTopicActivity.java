@@ -24,6 +24,7 @@ public class AboutTopicActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about_topic);
         Button button = findViewById(R.id.viewPDF);
 
+
         final ImageView logoTopic=findViewById(R.id.logoTopic) ;
 
         final TextView description=findViewById(R.id.description) ;
