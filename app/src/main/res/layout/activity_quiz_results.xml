@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-  android:background="@drawable/congratulation"
+    android:id="@+id/r1"
+
 
     tools:context=".Controller.QuizResultsActivity">
 
@@ -39,19 +40,22 @@
         android:layout_marginTop="480dp"
         android:layout_marginEnd="25sp"
         android:text="test"
+        android:visibility="invisible"
         android:textAlignment="center"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="18dp" />
+
     <TextView
 
-        android:id="@+id/successfulText"
+        android:id="@+id/Text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="510dp"
+        android:fontFamily="@font/anaktoria"
         android:gravity="center"
-        android:text="You've successfully completed the quiz"
+        android:text="test"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="21sp"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -60,7 +64,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/successfulText"
+        android:layout_below="@id/Text"
         android:layout_marginTop="10dp">
 
         <TextView

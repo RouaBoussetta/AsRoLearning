@@ -8,34 +8,54 @@
     android:orientation="vertical"
     tools:context=".Controller.Login">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="166dp">
 
-    <ImageView
-        android:id="@+id/logo"
 
-        android:layout_width="189dp"
-        android:layout_height="150dp"
-        android:layout_marginLeft="100dp"
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="200dp"
+            android:layout_height="206dp"
+            android:layout_marginLeft="100dp"
+            android:background="@drawable/logo" />
 
-        android:background="@drawable/logo"></ImageView>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/slogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="30dp"
+android:layout_marginBottom="20dp"
+        android:text="Educational Technology Learning"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
 
     <TextView
         android:id="@+id/asro"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="90dp"
-
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="150dp"
         android:fontFamily="@font/anaktoria"
-        android:text="AsRoLearning Login"
+        android:text="Sign In"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold" />
 
-
     <EditText
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_baseline_group_24"
+        android:drawableStart="@drawable/ic_baseline_group_24"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="60sp"
         android:hint="UserName" />
@@ -44,6 +64,8 @@
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_baseline_lock_24"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="20sp"
         android:hint="Password"
@@ -52,25 +74,32 @@
 
     <Button
         android:id="@+id/login"
-        android:layout_width="366dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="55sp"
+        android:layout_marginStart="60dp"
+
+        android:layout_marginEnd="60dp"
         android:background="@drawable/round_button"
         android:text="LOG IN"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+     />
 
     <Button
         android:id="@+id/register"
-        android:layout_width="366dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="20sp"
+        android:layout_marginStart="60dp"
+
+        android:layout_marginEnd="60dp"
         android:background="@drawable/round_button"
         android:text="SIGN UP"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+      />
 
 
 </LinearLayout>

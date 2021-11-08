@@ -6,12 +6,13 @@ import androidx.appcompat.widget.AppCompatButton;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.example.asrolearning.R;
 
 
 public class QuizResultsActivity extends AppCompatActivity {
-
+    private String getSelectedTopicName="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,11 +26,33 @@ public class QuizResultsActivity extends AppCompatActivity {
         final TextView wrongAnswer=findViewById(R.id.incorrectAnswer);
         final int getCorrectAnswer=getIntent().getIntExtra("correct",0);
         final int getInCorrectAnswer=getIntent().getIntExtra("incorrect",0);
+        RelativeLayout background = (RelativeLayout) findViewById(R.id.r1);
+        if(getCorrectAnswer>5){
+            TextView textmsg = findViewById(R.id.Text);
+            getSelectedTopicName=getIntent().getStringExtra("selectedTopic");
+            textmsg.setText("Good Job "+name+",\n Congratulations You Are Certified In\n"+getSelectedTopicName+" Course.");
+
+            background.setBackgroundResource(R.drawable.congratulation);
         correctAnswer.setText(String.valueOf(getCorrectAnswer));
-        wrongAnswer.setText(String.valueOf(getInCorrectAnswer));
+        wrongAnswer.setText(String.valueOf(getInCorrectAnswer));}
+
+        if(getInCorrectAnswer>5){
+            background.setBackgroundResource(R.drawable.sad);
+            TextView textmsg = findViewById(R.id.Text);
+            getSelectedTopicName=getIntent().getStringExtra("selectedTopic");
+            textmsg.setText("Sorry "+name+",\n You Have To Revise "+getSelectedTopicName+" Course Again");
+
+            correctAnswer.setText(String.valueOf(getCorrectAnswer));
+            wrongAnswer.setText(String.valueOf(getInCorrectAnswer));
+
+        }
+
+
         startNewQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 startActivity(new Intent(QuizResultsActivity.this, MainActivity.class));
                 finish();
             }

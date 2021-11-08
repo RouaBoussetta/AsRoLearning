@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.asrolearning.DAO.UserDao;
@@ -42,8 +43,9 @@ private AppCompatButton option1,option2 ,option3 ,option4;
 
 
         TextView tName = findViewById(R.id.name);
-          name = getIntent().getStringExtra("name");
+        name = getIntent().getStringExtra("name");
         tName.setText(name);
+
 
 
 
@@ -66,7 +68,7 @@ private AppCompatButton option1,option2 ,option3 ,option4;
         DbHelper = new AsRoLearningDBHelper(this);
         questionsList = DbHelper.getAllQuestions(getSelectedTopicName);
 
-       startTimer(timer);
+        startTimer(timer);
         questions.setText((currentQuestionPosition+1)+"/"+questionsList.size());
 
         question.setText(questionsList.get(0).getQuestion());
@@ -174,12 +176,19 @@ private AppCompatButton option1,option2 ,option3 ,option4;
                 public void run() {
                     User user = userDao.getUser(name);
                     String current = user.getName();
-                    startActivity(new Intent(
-                            QuizActivity.this, QuizResultsActivity.class)
-                        .putExtra("selectedTopic",getSelectedTopicName)
-                            .putExtra("name", current)
-                            .putExtra("incorrect",  getCorrectAnswers())
-                            .putExtra("correct",  getCorrectAnswers()));
+
+
+
+                        startActivity(new Intent(
+                                QuizActivity.this, QuizResultsActivity.class)
+                                .putExtra("selectedTopic",getSelectedTopicName)
+                                .putExtra("name", current)
+                                .putExtra("incorrect",  getIncorrectAnswers())
+                                .putExtra("correct",  getCorrectAnswers()));
+
+
+
+
 
                 }
             }).start();
@@ -220,23 +229,13 @@ private AppCompatButton option1,option2 ,option3 ,option4;
                                     QuizActivity.this,  QuizResultsActivity.class)
                                     .putExtra("selectedTopic",getSelectedTopicName)
                                     .putExtra("name", current)
-                                    .putExtra("incorrect",  getCorrectAnswers())
+                                    .putExtra("incorrect",  getIncorrectAnswers())
                                     .putExtra("correct",  getCorrectAnswers()));
 
                         }
                     }).start();
 
-                    /*
-                    quizTimer.purge();
-                    quizTimer.cancel();
-                    Toast.makeText(QuizActivity.this,"Time Over",Toast.LENGTH_SHORT).show();
-                    Intent intent =new Intent(QuizActivity.this,  QuizResultsActivity.class);
-                    intent.putExtra("correct",  getCorrectAnswers());
-                    intent.putExtra("incorrect",  getCorrectAnswers());
-                    startActivity(intent);
 
-                    finish();
-*/
                 }
                 else{
                     seconds--;
@@ -304,9 +303,27 @@ private AppCompatButton option1,option2 ,option3 ,option4;
     public void  onBackPressed(){
         quizTimer.purge();
         quizTimer.cancel();
+        UserDatabase userDatabase = UserDatabase.getUserDatabase(getApplicationContext());
+        UserDao userDao = userDatabase.userDao();
 
-        startActivity(new Intent(QuizActivity.this,MainActivity.class));
-        finish();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                User user = userDao.getUser(name);
+                String current = user.getName();
+
+                startActivity(new Intent(
+                        QuizActivity.this,MainActivity.class)
+                        .putExtra("selectedTopic",getSelectedTopicName)
+                        .putExtra("name", current)
+                        .putExtra("incorrect",  getIncorrectAnswers())
+                        .putExtra("correct",  getCorrectAnswers()));
+
+            }
+        }).start();
+
+
+
 
     }
 

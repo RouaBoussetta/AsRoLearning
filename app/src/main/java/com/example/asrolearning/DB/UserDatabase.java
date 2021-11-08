@@ -10,10 +10,10 @@ import androidx.room.RoomDatabase;
 import com.example.asrolearning.DAO.UserDao;
 import com.example.asrolearning.Models.User;
 
-@Database(entities = {User.class}, version = 1)
+@Database(entities = {User.class}, version = 2)
 public abstract class UserDatabase extends RoomDatabase {
 
-    private  static final String dbName = "asroLearning";
+    private  static final String dbName = "asroLearningV1";
     private  static UserDatabase userDatabase;
 
     public static synchronized  UserDatabase getUserDatabase(Context context){

@@ -8,7 +8,6 @@
    android:background="@drawable/background"
     tools:context=".Controller.MainActivity">
 
-
     <TextView
         android:id="@+id/hello"
         android:layout_width="match_parent"
@@ -34,6 +33,7 @@
         android:layout_marginBottom="50dp"
         android:textAlignment="center"
         android:text="test"
+
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="18dp" />
 
@@ -103,8 +103,6 @@ android:layout_below="@id/topicLayout"
             android:textStyle="bold" />
 
     </LinearLayout>
-
-
 
 
     <LinearLayout

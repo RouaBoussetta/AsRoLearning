@@ -13,12 +13,13 @@
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:layout_marginStart="25sp"
-        android:layout_below="@id/hello"
         android:layout_marginEnd="25sp"
         android:layout_marginBottom="50dp"
-        android:textAlignment="center"
         android:text="test"
+        android:visibility="invisible"
+        android:textAlignment="center"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="18dp" />
 

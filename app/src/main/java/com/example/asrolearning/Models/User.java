@@ -25,6 +25,8 @@ public class User {
 
     @ColumnInfo(name = "phone")
     String phone;
+    @ColumnInfo(name = "ProfileImage")
+    String ProfileImage;
 
     public Integer getId() {
         return id;
@@ -72,5 +74,13 @@ public class User {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getProfileImage() {
+        return ProfileImage;
+    }
+
+    public void setProfileImage(String profileImage) {
+        ProfileImage = profileImage;
     }
 }
