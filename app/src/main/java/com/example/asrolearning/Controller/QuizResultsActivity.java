@@ -40,7 +40,7 @@ public class QuizResultsActivity extends AppCompatActivity {
             background.setBackgroundResource(R.drawable.sad);
             TextView textmsg = findViewById(R.id.Text);
             getSelectedTopicName=getIntent().getStringExtra("selectedTopic");
-            textmsg.setText("Sorry "+name+",\n You Have To Revise "+getSelectedTopicName+" Course Again");
+            textmsg.setText("Sorry "+name+",\n You Have To Revise \n "+getSelectedTopicName+" Course Again");
 
             correctAnswer.setText(String.valueOf(getCorrectAnswer));
             wrongAnswer.setText(String.valueOf(getInCorrectAnswer));
