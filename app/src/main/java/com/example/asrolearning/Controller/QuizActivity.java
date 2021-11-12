@@ -40,8 +40,6 @@ private AppCompatButton option1,option2 ,option3 ,option4;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-
-
         TextView tName = findViewById(R.id.name);
         name = getIntent().getStringExtra("name");
         tName.setText(name);
